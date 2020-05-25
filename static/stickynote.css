@@ -1,0 +1,75 @@
+.headerbar {
+    background-color: #383838;
+}
+.headerlink {
+     color: #FFFFFF;
+}
+.headerlink.link {
+    cursor: pointer;
+}
+
+.stickynote {
+    /* set size of div to be exactly size of notepad icon */
+    width:306px; 
+    height:398px;
+    /*background image of div is notepad*/
+    background-image:url('smallnotepad.png');
+    /* wrap div around image inside of it */
+    margin: 0px auto;
+    display: inline-block;
+    border: 1px solid black;
+    border-color: #000000;
+    /*pointy cursor*/
+    cursor: pointer;
+    
+    float: left;
+    position: absolute;
+
+    /* default starting position of all sticky notes at top left */
+    left: 0px; 
+    top: 41px;
+}
+
+.stickynotetext {
+    font-size: small;
+}
+
+/* hidden save div */
+#hiddensave {
+    opacity: 0;
+    width: 500px;
+    top: 58px;
+    left: 600px;
+    position: absolute;
+    background-color: #000000;
+    color: #2B2B2B;
+    border-radius: 2px;
+    height: 50px;
+}
+
+/* triangle that makes hidden note name input div appear cleaner */
+.arrow {
+    top: 36px;
+    left: 620px;
+    position: absolute; /* let arrow move with css */
+    opacity: 0;
+}
+
+/* labels text field next to it */
+#label {
+    float: left;
+    color: #FFFFFF;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 3%;
+}
+
+/* input text field for new tab names */
+#labelinput {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-left: 15px;
+}
+

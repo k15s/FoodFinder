@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script><style type="text/css"></style>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="restaurantfinder.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6qz8u__DSUc_xYyTj7jNlgxjfV_2vMWo&sensor=false"></script>
+    <script>
+      var directionsDisplay;
+      var directionsService = new google.maps.DirectionsService();
+      var map;
+      function initialize() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var mapOptions = {
+          zoom: 4,
+          center: new google.maps.LatLng(33.716666,-118.301212),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+        directionsDisplay.setMap(map);
+
+        var control = document.getElementById('listofchains');
+        control.style.display = 'block';
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+
+  <body id="body">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="index.html">Bitstarter</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><h4 id="header" h4 class="headerlink">Food Finder App</h4></li>
+              <li><a id="viewlinkslink" class="headerlink link">View Links</a></li>
+              <li><a id="clearlinkslink" class="headerlink link">Clear Links</a></li>
+              <li><a id="submitlinkslink" class="headerlink link">Submit Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="selectioncontainer">
+    
+      <div class="input-prepend-container">
+        <div class="input-prepend">
+          <span id="locationlabel" class="add-on inputlabel">Location</span>
+          <input class="span2 input" id="locationinput" type="text" placeholder="Current Location">
+        </div>
+
+        <div id="right-input-prepend" class="input-prepend">
+          <span id="inputlabel" class="add-on inputlabel">Input</span>
+          <input class="span2 input" id="custominput" type="text" placeholder="Custom Input">
+        </div>
+      </div>
+
+      <div id="querycontainer" class="querycontainer">
+
+      </div>
+
+    </div>
+
+    <div id="listofchains" class="listofchains">
+      <strong id="chainselectlabel">Restaurant Chains:</strong>
+      <select id="selectrestaurantchain" onchange="filterMarkers(this);">
+      </select>
+    </div>
+
+    <div id="map-container">
+      <div id="map-canvas"></div>
+    </div>
+
+    <script src="restaurantfinder.js"></script>
+
+  </body>
+</html>
+

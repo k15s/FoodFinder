@@ -1,0 +1,364 @@
+/* using percetanges as widths/heights/sizes for elements is a good way to make things scale approrpriately
+ * based off browser size; however, min-width/min-height/min-sizes in pixels are a must to make sure that things
+ * don't scale and move around too much */
+
+/* selection container containing input spans */
+#selectioncontainer {
+    position: fixed;
+    top: 41px;
+    left: 0%;
+    width: 100%;
+    min-width: 1000px; /* prevent div from changing too much on re-size */
+    height: 170px;
+    min-height: 170px;
+    /*margin-top: -9em; [>set to a negative number 1/2 of your height<]*/
+    /*margin-left: 5%; [>set to a negative number 1/2 of your width<]*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+#header {
+    color: #FFFFFF;
+}
+
+/* input labels for both fields */
+.add-on.inputlabel {
+    height: 10%;
+    min-height: 20px;
+    width: 25%;
+    min-width: 120px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* inputs for both fields */
+.span2.input {
+    width: 70%;
+    min-width: 300px;
+    height: 10%;
+    min-height: 20px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* div that contains both complete labels and inputs (prevents them from resizing separately) */
+.input-prepend-container {
+    width: 90%;
+    min-width: 1000px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/*divs that contain spans and input*/
+.input-prepend {
+    margin-top: 10px;
+    min-width: 400px;
+    width: 43%;
+}
+
+/* rightmost input container holding location label and input */
+#right-input-prepend {
+    float: right;
+}
+
+/* map overlay */
+#map-canvas { 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 1000px;
+}
+
+/*contains map canvs */
+#map-container {
+    position: fixed;
+    left: 0%;
+    top: 213px;
+    height: 100%;
+    min-height: 1000px;
+    width: 100%;
+    min-width: 1000px; /* prevent div from changing too much on re-size */
+}
+
+/* main info div */
+.venueinfo {
+    float: left;
+    display: inline;
+    position: fixed;
+    left: 0%;
+    top: 213px;
+    width: 500px;
+    min-width: 500px;
+    background-color: #383838;
+    height: 250px;
+    border-color: #202020;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 4px 0px 2px #383838;
+}
+
+/* div at top of main info div */
+.venueinfotop {
+    width: 100%;
+    min-width: 500px;
+    background-color: #282828;
+    height: 50px;
+}
+
+/* name of venue */
+.venueheader {
+    font-size: 15px;
+    color: #FFFFFF;
+    width: 300px;
+    min-width: 300px;
+    float: left;
+}
+
+/* <p> content of main info div */
+.venuetextinfo {
+    color: #FFFFFF;
+}
+
+.close {
+    color: #FFFFFF;
+}
+
+.closedirections {
+    color: #383838;
+    cursor: pointer;
+}
+
+/* get directions link within venue info div */ 
+.headerlink.link.getdirectionslink {
+    cursor: pointer;
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    top: 15px;
+}
+
+/* directions div */
+#venuedirections {
+    display: inline;
+    float: right;
+    background-color: #FFFFFF;
+    width: 500px;
+    min-width: 500px;
+    height: 440px;
+    top: 210px;
+    right: 0%;
+    overflow: auto;
+    position: fixed;
+}
+
+.headerlink.link.createlink {
+    cursor: pointer;
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    top: 15px;
+}
+
+/* div containing query */ 
+.querydiv {
+    margin-top: 10px;
+    background-color: #585858;
+    color: #FFFFFF;
+    width: 100px;
+    min-width: 100px;
+    height: 60px;
+    box-shadow: 4px 0px 8px #000000;
+    margin-right: 3px;
+    margin-left: 3px;
+    display: inline-block;
+}
+
+/* div containing all the query divs */
+.querycontainer {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 94px;
+    min-height: 94px;
+    border: 1px solid;
+    width: 90%;
+    min-width: 1000px;
+    /* permit divs to keep on going inside container */
+    overflow: auto;
+    white-space: nowrap;
+    background-color: #404040;
+    border-radius: 5px;
+}
+
+/* text labeling query inside small rectangle */
+.querydivtitle {
+    text-align: center;
+    top: 0px;
+    font-family: Courier, monospace;
+    font-size: 10px;
+    height: 10px;
+}
+
+/* text explicity showing query inside small rectangle */
+.querydivcontents {
+    top: 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* div that contains list of all restaurant chains found */
+.listofchains {
+    background-color: #585858;
+    font-size: 14px;
+    font-family: Arial;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+    display: none;
+    width: 320px;
+    min-width: 320px;
+    border-radius: 5px;
+}
+
+/* text label in restaurant chain label div */
+#chainselectlabel {
+    margin-left: 10px;
+    font-size: 11px;
+}
+
+/* select box that contains all restaurant chains */
+#selectrestaurantchain {
+    margin-top: 10px;
+    margin-left: 2px;
+    width: 200px;
+}
+
+/* option tag that stores restaurant chain name */
+.restaurantchainoption {
+    background-color: #484848;
+    color: #FFFFFF;
+}
+
+/* div that contains queries to link word to */
+.querylinkdiv {
+    left: 43%;
+    top: 50%;
+    position: fixed;
+    width: 350px;
+    min-width: 350px;
+    height: 100px;
+    background-color: #484848;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+/* close option at top of div to link word to query */
+.closelinkdiv {
+    cursor: pointer;
+    color: #FFFFFF;
+    float: right;
+}
+
+/* drop down bar to choose query to link to */
+#choosewordlink {
+    margin-left: 85px;
+    width: 130px;
+    margin-top: 12px;
+}
+
+/* button that submits query to link word to */
+#choosewordbutton {
+    position: relative;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+/* header at top of link div when user sees a branch they like */
+#querylinkheader {
+    font-size: 13px;
+    text-align:center;
+    display: block;
+}
+
+/* links at top of page */
+.headerlink.link {
+    cursor: pointer;
+}
+
+/* div in which user manually inputs link */
+.userlinkdiv {
+    left: 43%;
+    top: 50%;
+    position: fixed;
+    width: 300px;
+    min-width: 300px;
+    height: 190px;
+    background-color: #484848;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border-
+}
+
+.add-on {
+    color: #000000;
+}
+
+#userlinkheader {
+    text-align: center;
+}
+
+/* user link submission divs */
+.input-prepend.form {
+    margin-left: 30px;
+}
+
+/* user link submission restaurant input field */
+#prependedRestaurantInput {
+    width: 142px;
+}
+
+#submituserlink {
+    margin-left: 120px;
+}
+
+/* div that contains list of all links */
+.viewlinksdiv {
+    width: 500px;
+    left: 37%;
+    top: 40%;
+    position: fixed;
+    height: 400px;
+    background-color: #383838;
+    opacity: 0.9;
+    border-radius: 5px;
+    color: #FFFFFF;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.viewlinksheader {
+    float: left;
+    left: 20px;
+    height: 5px;
+}
+
+.chainparagraph {
+    top: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.viewlinkscontainer {
+    width: 100%;
+    left: 10px;
+    float: left;
+    overflow: auto;
+    white-space: nowrap;
+    position: relative;
+}
+
+.closedisplaylinkdiv {
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+}

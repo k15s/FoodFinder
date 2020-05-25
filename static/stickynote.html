@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script><style type="text/css"></style>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="stickynote.css">
+  </head>
+  <body id="body">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="index.html">Bitstarter</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><h4 class="headerlink">Sticky Note App</h4></li>
+              <li><a id="newnotelink" class="headerlink link">New Note</a></li>
+              <li><a id="savenoteslink" class="headerlink link">Save Notes</a></li>
+              <li><a id="deletenotelink" class="headerlink link">Delete Note</a></li>
+              <li><a id="deletealllink" class="headerlink link">Delete All Notes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="hiddensave" class="control-group info">
+      <label id="label" class="control-label" for="inputInfo">Input note name</label>
+      <input id="labelinput" type="text" class="form-control" placeholder="New Note Name">
+      <button id="submitbutton" class="btn btn-primary">Submit</button>
+    </div>
+    <a class="arrow"><img src="triangle.png"></img></a>
+
+    <script src="stickynote.js"></script>
+
+  </body>
+</html>
+
